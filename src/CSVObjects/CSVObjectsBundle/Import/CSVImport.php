@@ -93,7 +93,7 @@ class CSVImport
 
         if ('xlsx' === $extension) {
             $pathname = sys_get_temp_dir() . uniqid('/xlsx2csv_', true);
-            $process  = new Process(['python', . __DIR__ . '/xlsx2csv.py', $file->getPathname(), $pathname]);
+            $process  = new Process(['python', __DIR__ . '/xlsx2csv.py', $file->getPathname(), $pathname]);
             $process->run();
 
             if (!$process->isSuccessful()) {
